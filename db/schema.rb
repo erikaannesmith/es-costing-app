@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331051555) do
+ActiveRecord::Schema.define(version: 20180331063623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20180331051555) do
     t.string "email"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_clients_on_user_id"
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string "name"
+    t.integer "amount"
+    t.decimal "cost"
+    t.string "season"
+    t.bigint "client_id"
+    t.index ["client_id"], name: "index_styles_on_client_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,4 +45,5 @@ ActiveRecord::Schema.define(version: 20180331051555) do
   end
 
   add_foreign_key "clients", "users"
+  add_foreign_key "styles", "clients"
 end

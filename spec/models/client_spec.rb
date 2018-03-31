@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Client, type: :model do
-  it "client#index" do
+  it "Client model" do
     auth = {
       provider: "google",
       uid: "0123456789",

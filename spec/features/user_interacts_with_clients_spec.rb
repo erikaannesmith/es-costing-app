@@ -5,12 +5,13 @@ describe "User interacts with clients" do
     stub_omniauth
     visit root_path
     click_on "Sign in with Google"
+    user = User.first
     client_1 = Client.create(name: "Stone Cold Fox",
                              email: "stone@stone.com",
-                             user_id: User.find_by(first_name: "Erika").id)
+                             user: user)
     client_2 = Client.create(name: "Novella Royalle",
                              email: "novella@novella.com",
-                             user_id: User.find_by(first_name: "Erika").id)
+                             user: user)
     visit root_path
 
     expect(page).to have_content("Erika Smith")
@@ -25,7 +26,7 @@ describe "User interacts with clients" do
     visit root_path
     click_on "Sign in with Google"
     
-    user = User.find_by(first_name: "Erika")
+    user = User.first
     
     expect(user.clients.count).to eq(0)
 
@@ -50,7 +51,7 @@ describe "User interacts with clients" do
     visit root_path
     click_on "Sign in with Google"
     
-    user = User.find_by(first_name: "Erika")
+    user = User.first
     client_1 = Client.create(name: "Stone Cold Fox",
                              email: "stone@stone.com",
                              user: user)

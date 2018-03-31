@@ -1,4 +1,4 @@
   <% current_user.clients.each do |c| %>
-    <%= c.name %>
+    <%= link_to "#{c.name}", user_client_path(c) %>
     <%= c.email %>
   <% end %>

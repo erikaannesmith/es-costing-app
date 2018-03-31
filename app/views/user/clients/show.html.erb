@@ -1,4 +1,15 @@
+<%= link_to "Home", root_path %>
+
 <%= @client.name %>
 <%= @client.email %>
+
+<h3>Styles</h3>
+
+<% @client.styles.each do |s| %>
+  <%= link_to "#{s.name}", user_client_style_path(s) %>
+  <%= s.amount %>
+  <%= s.cost %>
+  <%= s.season %>
+<% end %>
 
 <%= link_to "Edit Client", edit_user_client_path(@client) %>
