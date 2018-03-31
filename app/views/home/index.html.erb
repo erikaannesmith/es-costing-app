@@ -2,6 +2,10 @@
 <% if current_user  %>
   <h3>Welcome, <%= "#{current_user.first_name} #{current_user.last_name}" %></h3>
   <%= link_to "Logout", logout_path %>
+  
+  <%= render partial: 'clients_index' %>
+  <%= link_to "Add Client", new_user_client_path %>
+
 <% else %>
   <%= link_to "Sign in with Google", "/auth/google" %>
 <% end %>

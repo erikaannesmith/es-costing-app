@@ -9,6 +9,16 @@
   </head>
 
   <body>
+    <% flash.each do |type, message| %>
+     <% alert_type = case type
+        when 'success' then 'success'
+        when 'error' then 'danger'
+        else 'info'
+        end
+      %>
+      <%= content_tag :div, sanitize(message), class: "#{type} alert alert-#{alert_type}" %>
+    <% end %>
     <%= yield %>
+    
   </body>
 </html>
