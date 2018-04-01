@@ -1,0 +1,16 @@
+<%= form_for [:user, :client, @style] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+
+  <%= f.label :cost %>
+  <%= f.text_field :cost %>
+
+  <%= f.label :season %>
+  <%= f.text_field :season %>
+
+  <%= f.submit %>
+<% end %>
+  

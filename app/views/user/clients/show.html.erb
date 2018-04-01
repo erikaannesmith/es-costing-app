@@ -5,11 +5,11 @@
 
 <h3>Styles</h3>
 
-<% @client.styles.each do |s| %>
-  <%= link_to "#{s.name}", user_client_style_path(s) %>
-  <%= s.amount %>
-  <%= s.cost %>
-  <%= s.season %>
+<% @client.styles.each do |style| %>
+  <%= link_to "#{style.name}", user_client_style_path(style.client, style) %>
+  <%= style.amount %>
+  <%= style.cost %>
+  <%= style.season %>
 <% end %>
-
+<%= link_to "Create Style", new_user_client_style_path(@client) %>
 <%= link_to "Edit Client", edit_user_client_path(@client) %>
