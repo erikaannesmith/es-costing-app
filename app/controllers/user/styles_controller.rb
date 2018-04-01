@@ -40,7 +40,7 @@ class User::StylesController < ApplicationController
   private
 
   def style_params
-    params.require(:style).permit(:name, :amount, :cost, :seasons)
+    params.require(:style).permit(:name, :amount, :cost, :season)
   end
 
 end
