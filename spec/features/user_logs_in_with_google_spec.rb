@@ -5,12 +5,10 @@ describe "User logs in" do
     stub_omniauth
     visit root_path
 
-    expect(page).to have_link("Sign in with Google")
-    click_link "Sign in with Google"
-    expect(page).to have_content("Erika Smith")
-    expect(page).to have_link("Logout")
-    click_link "Logout"
-    expect(page).not_to have_content("Erika Smith")
-    expect(page).to have_content("Sign in with Google")
+    click_on(class: 'google-lgn-btn')
+    expect(page).to have_content("Erika")
+    expect(page).to have_link("Log Out")
+    click_link "Log Out"
+    expect(page).not_to have_content("Erika")
   end
 end

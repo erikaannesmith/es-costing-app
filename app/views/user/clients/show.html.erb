@@ -1,13 +1,27 @@
-<%= @client.name %>
-<%= @client.email %>
-
-<h3>Styles</h3>
-
-<% @client.styles.each do |style| %>
-  <%= link_to "#{style.name}", user_client_style_path(style.client, style) %>
-  <%= style.amount %>
-  <%= style.cost %>
-  <%= style.season %>
-<% end %>
-<%= link_to "Create Style", new_user_client_style_path(@client) %>
-<%= link_to "Edit Client", edit_user_client_path(@client) %>
+<div class='client-info'>
+  <h2 class='client-name'><%= @client.name.upcase %></h2>
+  <p><%= @client.email %></p>
+  <%= link_to "Edit Client", edit_user_client_path(@client), class: 'edit-client-btn' %>
+</div>
+<div class='style-index'>
+  <div class='style-top-line'>
+    <h3>Styles</h3>
+    <%= link_to "+", new_user_client_style_path(@client), class: 'new-style-btn' %>
+  </div>
+  <table>
+    <tr>
+      <th>Style</th>
+      <th>Quantity</th>
+      <th>Unit Cost</th>
+      <th>Season</th>
+    </tr>
+    <% @client.styles.each do |style| %>
+      <tr>
+        <td><%= link_to "#{style.name}", user_client_style_path(style.client, style) %></td>
+        <td><%= style.amount %></td>
+        <td><%= number_to_currency(style.cost) %></td>
+        <td><%= style.season %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

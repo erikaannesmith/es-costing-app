@@ -1,7 +1,19 @@
-<%= @style.name %>
-<%= @style.amount %>
-<%= @style.cost %>
-<%= @style.season %>
-<%= image_tag @style.image.url %>
-
-<%= link_to "Edit Style", edit_user_client_style_path(@style.client, @style) %>
+<div class="style-info">
+  <h2><%= @style.name %></h2>
+  <div class='style-data'>
+    <table>
+      <tr>
+        <th>Quantity</th>
+        <th>Unit Cost</th>
+        <th>Season</th>
+      </tr>
+      <tr>
+        <td><%= @style.amount %></td>
+        <td><%= number_to_currency(@style.cost) %></td>
+        <td><%= @style.season %></td>      
+      </tr>
+    </table>
+    <p><%= image_tag @style.image.url %></p>
+  </div>
+  <%= link_to "Edit Style", edit_user_client_style_path(@style.client, @style), class: 'edit-style-btn' %>
+</div>

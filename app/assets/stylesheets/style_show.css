@@ -1,0 +1,14 @@
+span {
+  font-weight: bold;
+}
+
+.style-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.style-top-line {
+  display: flex;
+  align-items: center;
+}

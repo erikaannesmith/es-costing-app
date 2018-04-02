@@ -4,7 +4,7 @@ describe "User interacts with styles" do
   it "They can see all styles for a client" do
     stub_omniauth
     visit root_path
-    click_on "Sign in with Google"
+    click_on(class: 'google-lgn-btn')    
     user = User.first
     client_1 = Client.create(name: "Stone Cold Fox",
                              email: "stone@stone.com",
@@ -47,7 +47,7 @@ describe "User interacts with styles" do
   it "They can see an individual style" do
     stub_omniauth
     visit root_path
-    click_on "Sign in with Google"
+    click_on(class: 'google-lgn-btn')    
     user = User.first
     client_1 = Client.create(name: "Stone Cold Fox",
                              email: "stone@stone.com",
@@ -75,7 +75,7 @@ describe "User interacts with styles" do
   it "They can create a new style" do
     stub_omniauth
     visit root_path
-    click_on "Sign in with Google"
+    click_on(class: 'google-lgn-btn')    
     user = User.first
     client_1 = Client.create(name: "Stone Cold Fox",
                              email: "stone@stone.com",
@@ -85,7 +85,7 @@ describe "User interacts with styles" do
 
     visit root_path
     click_on client_1.name
-    click_on "Create Style"
+    click_on "+"
 
     expect(current_path).to eq(new_user_client_style_path(client_1))
 
@@ -108,7 +108,7 @@ describe "User interacts with styles" do
   it "They can edit an existing style" do
     stub_omniauth
     visit root_path
-    click_on "Sign in with Google"
+    click_on(class: 'google-lgn-btn')    
     user = User.first
     client_1 = Client.create(name: "Stone Cold Fox",
                              email: "stone@stone.com",

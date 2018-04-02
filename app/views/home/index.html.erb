@@ -1,11 +1,16 @@
 
 <% if current_user  %>
-  <h3>Welcome, <%= "#{current_user.first_name} #{current_user.last_name}" %></h3>
-  <%= link_to "Logout", logout_path %>
-  
-  <%= render partial: 'clients_index' %>
-  <%= link_to "Add Client", new_user_client_path %>
-
+  <div class="welcome-scrn">
+      <h2 class="welcome">Welcome, <%= "#{current_user.first_name}!" %></h2>
+    <div class="clients-top-line">
+      <h3>Clients</h3>
+      <%= link_to '+', new_user_client_path, class: 'add-client-btn'%>
+    </div>
+    <%= render partial: 'clients_index' %>
+  </div>
 <% else %>
-  <%= link_to "Sign in with Google", "/auth/google" %>
+  <div class='login-scrn'>
+    <%= render partial: 'about' %>
+    <%= link_to image_tag('google_lgn.png', size: "230x60"), "/auth/google", class: "google-lgn-btn" %>
+  </div>
 <% end %>

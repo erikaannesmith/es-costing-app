@@ -1,9 +1,13 @@
-<%= form_for [:user, @client] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+<div class='new-client-pg'>
+  <h2 class="new-client-header">New Client</h2>
+  <%= form_for [:user, @client] do |f| %>
+    <div class="new-client">
+      <%= f.text_field :name, placeholder: 'name' %>
 
-  <%= f.submit %>
-<% end %>
+      <%= f.text_field :email, placeholder: 'email' %>
+
+      <%= f.submit class: 'submit-btn' %>
+    </div>
+  <% end %>
+</div>

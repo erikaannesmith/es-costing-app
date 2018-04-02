@@ -4,7 +4,7 @@ describe "User interacts with clients" do
   it "They see a client index after logging in" do
     stub_omniauth
     visit root_path
-    click_on "Sign in with Google"
+    click_on(class: 'google-lgn-btn')
     user = User.first
     client_1 = Client.create(name: "Stone Cold Fox",
                              email: "stone@stone.com",
@@ -14,7 +14,7 @@ describe "User interacts with clients" do
                              user: user)
     visit root_path
 
-    expect(page).to have_content("Erika Smith")
+    expect(page).to have_content("Erika")
     expect(page).to have_content(client_1.name)
     expect(page).to have_content(client_1.email)
     expect(page).to have_content(client_2.name)
@@ -24,13 +24,13 @@ describe "User interacts with clients" do
   it "They can create a new client" do
     stub_omniauth
     visit root_path
-    click_on "Sign in with Google"
+    click_on(class: 'google-lgn-btn')    
     
     user = User.first
     
     expect(user.clients.count).to eq(0)
 
-    click_on "Add Client"
+    click_on "+"
 
     expect(current_path).to eq(new_user_client_path)
 
@@ -49,7 +49,7 @@ describe "User interacts with clients" do
   it "They can edit a client" do
     stub_omniauth
     visit root_path
-    click_on "Sign in with Google"
+    click_on(class: 'google-lgn-btn')    
     
     user = User.first
     client_1 = Client.create(name: "Stone Cold Fox",
@@ -58,7 +58,7 @@ describe "User interacts with clients" do
 
     visit user_client_path(client_1)
 
-    expect(page).to have_content("Stone Cold Fox")
+    expect(page).to have_content("STONE COLD FOX")
 
     click_on "Edit Client"
 
