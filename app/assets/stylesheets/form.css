@@ -1,7 +1,11 @@
 .new-client, 
 .new-client-pg, 
 .edit-client, 
-.edit-client-pg {
+.edit-client-pg,
+.new-style,
+.new-style-pg,
+.edit-style,
+.edit-style-pg {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +18,9 @@ input {
 }
 
 .new-client-header,
-.edit-client-header {
+.edit-client-header,
+.new-style-header,
+.edit-style-header {
   font-weight: normal;
 }
 

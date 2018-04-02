@@ -1,17 +1,18 @@
-<%= form_for [:user, :client, @style], html: { multipart: true } do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="new-style-pg">
+  <h2 class="new-style-header">New Style</h2>
+  <%= form_for [:user, :client, @style], html: { multipart: true } do |f| %>
+    <div class='new-style'>
+      <%= f.text_field :name, placeholder: 'name' %>
 
-  <%= f.label :amount %>
-  <%= f.text_field :amount %>
+      <%= f.text_field :amount, placeholder: 'quantity' %>
 
-  <%= f.label :cost %>
-  <%= f.text_field :cost %>
+      <%= f.text_field :cost, placeholder: 'unit cost' %>
 
-  <%= f.label :season %>
-  <%= f.text_field :season %>
+      <%= f.text_field :season, placeholder: 'season' %>
 
-  <%= f.file_field :image %>
+      <%= f.file_field :image %>
 
-  <%= f.submit %>
-<% end %>
+      <%= f.submit class: 'submit-btn' %>
+    </div>
+  <% end %>
+</div>
