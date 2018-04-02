@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dnvr5sxx9
+  api_key: '657246899682827'
+  api_secret: m-1Z0W_rv1tF6tNCdEZ6PZG60Gk
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dnvr5sxx9
+  api_key: '657246899682827'
+  api_secret: m-1Z0W_rv1tF6tNCdEZ6PZG60Gk
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dnvr5sxx9
+  api_key: '657246899682827'
+  api_secret: m-1Z0W_rv1tF6tNCdEZ6PZG60Gk
+  enhance_image_tag: true
+  static_image_support: false
