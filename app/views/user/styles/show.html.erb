@@ -2,5 +2,6 @@
 <%= @style.amount %>
 <%= @style.cost %>
 <%= @style.season %>
+<%= image_tag @style.image.url %>
 
 <%= link_to "Edit Style", edit_user_client_style_path(@style.client, @style) %>

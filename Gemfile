@@ -29,7 +29,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
-
+gem "paperclip", "~> 6.0.0"
+gem 'paperclip-cloudinary'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
