@@ -10,7 +10,7 @@
   </div>
 
   <%= form_tag user_client_search_path(@client), method: :get do %>
-      <%= text_field_tag :search, "Enter Style" %>
+      <%= text_field_tag :search, nil, placeholder: "Enter Style" %>
       <%= submit_tag "Search" %>
   <% end %>
 
