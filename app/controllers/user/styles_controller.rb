@@ -1,6 +1,7 @@
 class User::StylesController < ApplicationController
 
   def show
+    @client = Client.find(params[:client_id])
     @style = Style.find_by(id: params[:id], client_id: params[:client_id])
   end
 
