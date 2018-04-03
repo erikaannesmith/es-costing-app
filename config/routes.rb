@@ -6,9 +6,15 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
   namespace :user do
     resources :clients do
-      resources :styles
+      get '/search', to: "style_search#index"
+      resources :styles do
+      end
     end
     get '/search', to: "search#index"
   end
+
+  
+
+  
 
 end

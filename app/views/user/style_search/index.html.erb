@@ -9,12 +9,10 @@
     <%= link_to "+", new_user_client_style_path(@client), class: 'new-style-btn' %>
   </div>
 
-  <%# searchbar %>
   <%= form_tag user_client_search_path(@client), method: :get do %>
       <%= text_field_tag :search, "Enter Style" %>
       <%= submit_tag "Search" %>
   <% end %>
-
 
   <table>
     <tr>
@@ -23,7 +21,7 @@
       <th>Unit Cost</th>
       <th>Season</th>
     </tr>
-    <% @client.styles.each do |style| %>
+    <% @styles.each do |style| %>
       <tr>
         <td><%= link_to "#{style.name}", user_client_style_path(style.client, style) %></td>
         <td><%= style.amount %></td>
