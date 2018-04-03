@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :clients do
       resources :styles
     end
+    get '/search', to: "search#index"
   end
 
 end
