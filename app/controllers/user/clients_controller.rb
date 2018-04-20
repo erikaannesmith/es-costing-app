@@ -2,6 +2,7 @@ class User::ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    @styles = @client.styles.order(:name)
   end
 
   def new

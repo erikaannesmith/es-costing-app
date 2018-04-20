@@ -22,7 +22,7 @@
       <th>Price Quote</th>
       <th>Season</th>
     </tr>
-    <% @client.styles.each do |style| %>
+    <% @styles.each do |style| %>
       <tr>
         <td><%= link_to "#{style.name}", user_client_style_path(style.client, style) %></td>
         <td><%= style.amount %></td>

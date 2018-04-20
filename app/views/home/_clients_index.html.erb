@@ -1,4 +1,4 @@
-  <% current_user.clients.each do |c| %>
+  <% @clients.each do |c| %>
     <div class='client'>
       <%= link_to "#{c.name}", user_client_path(c) %>
       <%= c.email %>
