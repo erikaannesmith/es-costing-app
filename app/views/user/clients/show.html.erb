@@ -18,13 +18,15 @@
     <tr>
       <th>Style</th>
       <th>Quantity</th>
-      <th>Unit Cost</th>
+      <th>Sewing Labor</th>
+      <th>Price Quote</th>
       <th>Season</th>
     </tr>
     <% @client.styles.each do |style| %>
       <tr>
         <td><%= link_to "#{style.name}", user_client_style_path(style.client, style) %></td>
         <td><%= style.amount %></td>
+        <td><%= number_to_currency(style.labor_cost) %></td>
         <td><%= number_to_currency(style.cost) %></td>
         <td><%= style.season %></td>
       </tr>
