@@ -1,6 +1,7 @@
 <div class="style-info">
   <%= link_to "#{@client.name}", user_client_path(@client), class: 'back' %>
   <h2><%= @style.name %></h2>
+  <%= link_to "Edit Style", edit_user_client_style_path(@style.client, @style), class: 'edit-style-btn' %>  
   <div class='style-data'>
     <table>
       <tr>
@@ -18,5 +19,4 @@
     </table>
     <p><%= image_tag @style.image.url, size: "100%" %></p>
   </div>
-  <%= link_to "Edit Style", edit_user_client_style_path(@style.client, @style), class: 'edit-style-btn' %>
 </div>
