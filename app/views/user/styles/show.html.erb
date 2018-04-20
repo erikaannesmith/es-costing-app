@@ -5,11 +5,13 @@
     <table>
       <tr>
         <th>Quantity</th>
-        <th>Unit Cost</th>
+        <th>Sewing Labor</th>
+        <th>Price Quote</th>
         <th>Season</th>
       </tr>
       <tr>
         <td><%= @style.amount %></td>
+        <td><%= number_to_currency(@style.labor_cost) %></td>
         <td><%= number_to_currency(@style.cost) %></td>
         <td><%= @style.season %></td>      
       </tr>
