@@ -7,7 +7,7 @@ class User::ShipNotificationsController < ApplicationController
     @recipient = params[:recipient]
     @tracking_number = params[:tracking_number]
     @shipping_service = params[:shipping_service]
-    @additional_notes = params[:additional_notes]
+    params[:additional_notes].present? ? @additional_notes = params[:additional_notes] : @additional_notes = ""
     @sender_email = current_user.email
     @sender_name = "#{current_user.first_name + ' ' +  current_user.last_name}"
     if params[:file].present?
