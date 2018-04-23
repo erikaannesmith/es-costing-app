@@ -14,6 +14,9 @@ class User::ClientsController < ApplicationController
     if @client.email.empty?
       redirect_to root_path
       flash[:danger] = "New clients must have an email address."
+    elsif @client.name.empty?
+      redirect_to root_path
+      flash[:danger] = "New clients must have a name."
     elsif @client.save!
       redirect_to user_client_path(@client)
       flash[:success] = "#{@client.name} has been created!"
