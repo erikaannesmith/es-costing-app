@@ -11,7 +11,10 @@ class User::ClientsController < ApplicationController
 
   def create
     @client = current_user.clients.create(client_params)
-    if @client.save!
+    if @client.email.empty?
+      redirect_to root_path
+      flash[:danger] = "New clients must have an email address."
+    elsif @client.save!
       redirect_to user_client_path(@client)
       flash[:success] = "#{@client.name} has been created!"
     else
