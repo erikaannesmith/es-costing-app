@@ -1,0 +1,15 @@
+<h1>Send Shipping Notifications</h1>
+
+<%= form_tag user_ship_notifications_path(current_user), :multipart => true, method: :post do %>
+    <%= text_field_tag :recipient, nil, placeholder: "Recipient" %>
+
+    <%= text_field_tag :tracking_number, nil, placeholder: "Tracking Number" %>
+
+    <%= text_field_tag :shipping_service, nil, placeholder: "Shipping Service" %>
+
+    <%= text_field_tag :additional_notes, nil, placeholder: "Additional Notes" %>
+
+    <%= file_field_tag :file %>
+
+    <%= submit_tag "Send" %>
+<% end %>

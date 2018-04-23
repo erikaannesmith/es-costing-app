@@ -43,8 +43,8 @@ h2 {
   padding: 7px;
   border-radius: 2px;
   color: black;
-  background-color: lightgray;
   font-family: 'Raleway', sans-serif;  
+  text-align: right;
 }
 
 .welcome-scrn {

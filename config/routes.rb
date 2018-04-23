@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :styles do
       end
     end
+    resources :ship_notifications
     get '/search', to: "search#index"
   end
 
