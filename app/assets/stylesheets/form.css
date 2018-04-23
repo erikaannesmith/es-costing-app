@@ -11,10 +11,14 @@
   align-items: center;
 }
 
-input {
+input, select, textarea {
   margin: 10px;
   padding: 7px;
   border-radius: 4px;
+}
+
+#file {
+  padding-left: 85px;
 }
 
 .new-client-header,
@@ -27,4 +31,22 @@ input {
 .submit-btn {
   background-color: aliceblue;
   font-size: unset;
+}
+
+.ship-notification-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.send-shipping-notification-btn {
+  background-color: aliceblue;
+  font-size: 15px;
+  padding: 9px;
+}
+
+#ship-notification-page {
+  display: flex;
+  justify-content: center;
 }

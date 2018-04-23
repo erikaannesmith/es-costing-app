@@ -9,6 +9,7 @@ class UserMailer < ApplicationMailer
     @sender_email = sender_email
     @sender_name = sender_name
     @shipping_receipt = shipping_receipt
+    @recipient_name = Client.find_by(email: @recipient).name
     if !@shipping_receipt.empty?
       attachments[shipping_receipt_name] = File.read(@shipping_receipt)
     end
