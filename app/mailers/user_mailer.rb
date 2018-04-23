@@ -9,8 +9,10 @@ class UserMailer < ApplicationMailer
     @sender_email = sender_email
     @sender_name = sender_name
     @shipping_receipt = shipping_receipt
-    attachments[shipping_receipt_name] = File.read(@shipping_receipt)
-    mail(to: @recipient, subject: 'Shipping Notification')
+    if !@shipping_receipt.empty?
+      attachments[shipping_receipt_name] = File.read(@shipping_receipt)
+    end
+    mail(to: @recipient, subject: 'Shipping Notification', bcc: @sender_email)
   end
 
 end

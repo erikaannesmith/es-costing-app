@@ -10,8 +10,13 @@ class User::ShipNotificationsController < ApplicationController
     @additional_notes = params[:additional_notes]
     @sender_email = current_user.email
     @sender_name = "#{current_user.first_name + ' ' +  current_user.last_name}"
-    @shipping_reciept = params[:file].path
-    @shipping_receipt_name = params[:file].original_filename
+    if params[:file].present?
+      @shipping_reciept = params[:file].path
+      @shipping_receipt_name = params[:file].original_filename
+    else
+      @shipping_reciept = ""
+      @shipping_receipt_name = ""
+    end
     send_shipping_notification(@recipient, @tracking_number, @shipping_service, @additional_notes, @sender_email, @sender_name, @shipping_reciept, @shipping_receipt_name)
   end
 
