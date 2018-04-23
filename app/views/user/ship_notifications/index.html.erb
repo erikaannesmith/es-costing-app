@@ -1,7 +1,7 @@
 <h1>Send Shipping Notifications</h1>
 
 <%= form_tag user_ship_notifications_path(current_user), :multipart => true, method: :post do %>
-    <%= text_field_tag :recipient, nil, placeholder: "Recipient" %>
+    <%= select_tag 'recipient', options_for_select(current_user.clients.collect{ |client| [client.name, client.email] }) %>
 
     <%= text_field_tag :tracking_number, nil, placeholder: "Tracking Number" %>
 
