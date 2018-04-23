@@ -12,7 +12,14 @@
     <% if current_user %>
       <div class="nav">
         <%= link_to image_tag('elogo.png', size: "80x70"), root_path %>
-        <%= link_to "Log Out", logout_path, class:'logout' %>      
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn"><%= image_tag('menu.png', size: '20x20') %></button>
+          <div id="myDropdown" class="dropdown-content">
+            <%= link_to "Ship Notifications", user_ship_notifications_path, class:'logout' %>
+            <%= link_to "Log Out", logout_path, class:'logout' %>
+          </div>
+        </div>
+              
       </div>
     <% else %>
       <%= link_to image_tag('elogo.png', size: "80x70"), root_path %>      

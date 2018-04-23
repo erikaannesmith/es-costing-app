@@ -1,4 +1,4 @@
-  <% @clients.each do |c| %>
+  <% current_user.clients.order(:name).each do |c| %>
     <div class='client'>
       <%= link_to "#{c.name}", user_client_path(c) %>
       <%= c.email %>
