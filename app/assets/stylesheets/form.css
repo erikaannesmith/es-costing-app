@@ -35,7 +35,7 @@ textarea:focus, input:focus, button:focus{
 
 .drop:hover {
   background-color: lightgray;
-    -o-transition:.5s;
+  -o-transition:.5s;
   -ms-transition:.5s;
   -moz-transition:.5s;
   -webkit-transition:.5s;

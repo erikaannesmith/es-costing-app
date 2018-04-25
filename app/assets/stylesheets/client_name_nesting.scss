@@ -1,6 +1,11 @@
 .client:hover {
   .client-name {
     color: red;
+    -o-transition:.3s;
+    -ms-transition:.3s;
+    -moz-transition:.3s;
+    -webkit-transition:.3s;
+    transition:.3s;
   }
 }
 
@@ -9,10 +14,10 @@
   .table-style-name {
     text-decoration: underline;
     color: red;
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition:.5s;
+    -o-transition:.3s;
+    -ms-transition:.3s;
+    -moz-transition:.3s;
+    -webkit-transition:.3s;
+    transition:.3s;
   }
 }
