@@ -53,7 +53,9 @@ h2 {
   align-items: center;
 }
 
-.welcome, .client-name-show {
+.welcome, 
+.client-name-show,
+.style-name-show {
   font-weight: lighter;
   font-size: 37px;
   letter-spacing: 1px;

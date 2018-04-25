@@ -26,7 +26,7 @@
     </tr>
     <% @styles.each do |style| %>
       <tr class="style">
-          <td><%= link_to "#{style.name.upcase}", user_client_style_path(style.client, style), class:'table-style-name' %></td>
+          <td><%= link_to "#{style.abbreviated_name.upcase}", user_client_style_path(style.client, style), class:'table-style-name' %></td>
           <td><%= style.amount %></td>
           <td><%= number_to_currency(style.labor_cost) %></td>        
           <td><%= number_to_currency(style.cost) %></td>
