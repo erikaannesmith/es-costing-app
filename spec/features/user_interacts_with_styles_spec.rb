@@ -30,15 +30,15 @@ describe "User interacts with styles" do
     
     visit user_client_path(client_1)
 
-    expect(page).to have_content(style_1.name)
+    expect(page).to have_content(style_1.name.upcase)
     expect(page).to have_content(style_1.amount)
     expect(page).to have_content(style_1.cost)
     expect(page).to have_content(style_1.season)
-    expect(page).to have_content(style_2.name)
+    expect(page).to have_content(style_2.name.upcase)
     expect(page).to have_content(style_2.amount)
     expect(page).to have_content(style_2.cost)
     expect(page).to have_content(style_2.season)
-    expect(page).not_to have_content(style_3.name)
+    expect(page).not_to have_content(style_3.name.upcase)
     expect(page).not_to have_content(style_3.amount)
     expect(page).not_to have_content(style_3.cost)
     expect(page).not_to have_content(style_3.season)
@@ -63,7 +63,7 @@ describe "User interacts with styles" do
     
     visit root_path
     click_on client_1.name.upcase
-    click_on style_1.name
+    click_on style_1.name.upcase
 
     expect(current_path).to eq(user_client_style_path(client_1, style_1))
     expect(page).to have_content(style_1.name)
@@ -94,7 +94,7 @@ describe "User interacts with styles" do
     fill_in "style[cost]", with: "80"
     fill_in "style[season]", with: "SS17"
 
-    click_on "Create Style"
+    click_on "CREATE STYLE"
 
     style = Style.last
     expect(current_path).to eq(user_client_style_path(client_1, style))
@@ -125,7 +125,7 @@ describe "User interacts with styles" do
 
     click_on "Edit Style"
     fill_in "style[name]", with: "Erika Top"
-    click_on "Update Style"
+    click_on "UPDATE STYLE"
 
     expect(current_path).to eq(user_client_style_path(client_1, style_1))
     expect(page).to have_content("Erika Top has been updated!")

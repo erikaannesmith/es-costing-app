@@ -37,7 +37,7 @@ describe "User interacts with clients" do
     fill_in "client[name]", with: "Novella Royalle"
     fill_in "client[email]", with: "novella@novella.com"
 
-    click_on "Create Client"
+    click_on "CREATE CLIENT"
 
     expect(current_path).to eq(user_client_path(Client.first))
     expect(user.clients.count).to eq(1)
@@ -66,7 +66,7 @@ describe "User interacts with clients" do
 
     fill_in "client[email]", with: "fox@fox.com"
 
-    click_on "Update Client"
+    click_on "UPDATE CLIENT"
 
     expect(current_path).to eq(user_client_path(client_1))
     expect(page).to have_content("#{client_1.name} has been updated!")

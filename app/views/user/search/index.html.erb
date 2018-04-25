@@ -12,7 +12,7 @@
     <% end %>
     <%= link_to "SHOW ALL", root_path, class: 'show-all' %>
 
-  <% current_user.clients.order(:name).each do |c| %>
+  <% @clients.order(:name).each do |c| %>
     <div class='client'>
       <%= link_to "#{c.name.upcase}", user_client_path(c), class:'client-name' %>
       <div class='client-email'><%= c.email %></div>
