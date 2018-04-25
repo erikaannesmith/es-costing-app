@@ -31,6 +31,7 @@ gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem "paperclip", "~> 6.0.0"
 gem 'paperclip-cloudinary'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

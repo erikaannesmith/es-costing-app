@@ -3,13 +3,13 @@
   <div class="welcome-scrn">
     <h2 class="welcome">Welcome, <%= "#{current_user.first_name}!" %></h2>
     <div class="clients-top-line">
-      <h3>Clients</h3>
+      <h3 class='titles'>CLIENTS</h3>
       <%= link_to '+', new_user_client_path, class: 'add-client-btn'%>
     </div>
     
     <%= form_tag [:user, :search], method: :get do %>
       <%= text_field_tag :search, nil, placeholder: "Enter Client" %>
-      <%= submit_tag "Search" %>
+      <%= submit_tag "Search", class:'search-btn' %>
     <% end %>
 
     <%= render partial: 'clients_index' %>

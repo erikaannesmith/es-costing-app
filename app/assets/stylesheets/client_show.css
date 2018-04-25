@@ -5,10 +5,6 @@
   font-family: 'Raleway', sans-serif;
 }
 
-.client-name {
-  font-weight: normal;
-}
-
 .style-index {
   margin-top: 20px;
   display: flex;
@@ -31,9 +27,16 @@ td {
   padding: 10px;
 }
 
-tr:hover {background-color: #f5f5f5;}
+/* tr:hover {background-color: #f5f5f5;} */
 
 h2 {
   font-family: 'Raleway', sans-serif;
   font-weight: normal;  
 }
+
+
+.table-style-name {
+  text-decoration: none;
+  color: black;
+}
+

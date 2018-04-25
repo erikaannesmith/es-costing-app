@@ -1,6 +1,6 @@
   <% current_user.clients.order(:name).each do |c| %>
     <div class='client'>
-      <%= link_to "#{c.name}", user_client_path(c) %>
-      <%= c.email %>
+      <%= link_to "#{c.name.upcase}", user_client_path(c), class:'client-name' %>
+      <div class='client-email'><%= c.email %></div>
     </div>
   <% end %>

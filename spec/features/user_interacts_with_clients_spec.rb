@@ -15,9 +15,9 @@ describe "User interacts with clients" do
     visit root_path
 
     expect(page).to have_content("Erika")
-    expect(page).to have_content(client_1.name)
+    expect(page).to have_content(client_1.name.upcase)
     expect(page).to have_content(client_1.email)
-    expect(page).to have_content(client_2.name)
+    expect(page).to have_content(client_2.name.upcase)
     expect(page).to have_content(client_2.email)
   end
 
@@ -58,7 +58,7 @@ describe "User interacts with clients" do
 
     visit user_client_path(client_1)
 
-    expect(page).to have_content("STONE COLD FOX")
+    expect(page).to have_content("Stone Cold Fox")
 
     click_on "Edit Client"
 

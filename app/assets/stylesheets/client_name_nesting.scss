@@ -1,0 +1,18 @@
+.client:hover {
+  .client-name {
+    color: red;
+  }
+}
+
+.style:hover {
+  background-color: #f5f5f5;
+  .table-style-name {
+    text-decoration: underline;
+    color: red;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+  }
+}

@@ -2,20 +2,20 @@
   <div class="welcome-scrn">
     <h2 class="welcome">Welcome, <%= "#{current_user.first_name}!" %></h2>
     <div class="clients-top-line">
-      <h3>Clients</h3>
+      <h3 class='titles'>CLIENTS</h3>
       <%= link_to '+', new_user_client_path, class: 'add-client-btn'%>
     </div>
     
     <%= form_tag [:user, :search], method: :get do %>
       <%= text_field_tag :search, nil, placeholder: "Enter Client" %>
-      <%= submit_tag "Search" %>
+      <%= submit_tag "Search", class:'search-btn' %>
     <% end %>
-    <%= link_to "Show All", root_path, class: 'show-all' %>
+    <%= link_to "SHOW ALL", root_path, class: 'show-all' %>
 
-  <% @clients.each do |c| %>
+  <% current_user.clients.order(:name).each do |c| %>
     <div class='client'>
-      <%= link_to "#{c.name}", user_client_path(c) %>
-      <%= c.email %>
+      <%= link_to "#{c.name.upcase}", user_client_path(c), class:'client-name' %>
+      <div class='client-email'><%= c.email %></div>
     </div>
   <% end %>
 

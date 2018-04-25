@@ -1,34 +1,36 @@
 <div class='client-info'>
-  <h2 class='client-name'><%= @client.name.upcase %></h2>
+  <h2 class='client-name-show'><%= @client.name %></h2>
   <p><%= @client.email %></p>
   <%= link_to "Edit Client", edit_user_client_path(@client), class: 'edit-client-btn' %>
 </div>
 <div class='style-index'>
   <div class='style-top-line'>
-    <h3>Styles</h3>
+    <h3 class='titles'>STYLES</h3>
     <%= link_to "+", new_user_client_style_path(@client), class: 'new-style-btn' %>
   </div>
 
   <%= form_tag user_client_search_path(@client), method: :get do %>
       <%= text_field_tag :search, nil, placeholder: "Enter Style" %>
-      <%= submit_tag "Search" %>
+      <%= submit_tag "Search", class:'search-btn' %>
   <% end %>
 
-  <%= link_to "Show All", user_client_path(@client), class: 'show-all' %>
+  <%= link_to "SHOW ALL", user_client_path(@client), class: 'show-all' %>
 
   <table>
     <tr>
       <th>Style</th>
       <th>Quantity</th>
+      <th>Sewing Labor</th>      
       <th>Price Quote</th>
       <th>Season</th>
     </tr>
     <% @styles.each do |style| %>
-      <tr>
-        <td><%= link_to "#{style.name}", user_client_style_path(style.client, style) %></td>
-        <td><%= style.amount %></td>
-        <td><%= number_to_currency(style.cost) %></td>
-        <td><%= style.season %></td>
+      <tr class="style">
+          <td><%= link_to "#{style.name.upcase}", user_client_style_path(style.client, style), class:'table-style-name' %></td>
+          <td><%= style.amount %></td>
+          <td><%= number_to_currency(style.labor_cost) %></td>        
+          <td><%= number_to_currency(style.cost) %></td>
+          <td><%= style.season %></td>
       </tr>
     <% end %>
   </table>

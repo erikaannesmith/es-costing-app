@@ -12,10 +12,10 @@
   padding: 16px;
 }
 
-h1 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-    letter-spacing: 5px;
+h1, #ship-notification-page {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  letter-spacing: 5px;
 }
 
 .descript {
@@ -53,21 +53,54 @@ h2 {
   align-items: center;
 }
 
-.welcome {
-  font-weight: normal
+.welcome, .client-name-show {
+  font-weight: lighter;
+  font-size: 37px;
+  letter-spacing: 1px;
+  margin: 29px;
+}
+
+.titles {
+  font-size: 27px;
+  letter-spacing: 14px;
+  font-weight: lighter;
+}
+
+.drop {
+  border: 0.5px solid darkgray;
 }
 
 .add-client-btn, 
 .edit-client-btn, 
 .new-style-btn, 
 .edit-style-btn,
-.back {
+.back,
+.submit-btn,
+.send-shipping-notification-btn {
   margin: 10px;
   padding: 7px;
   border-radius: 4px;
   border: 1px solid lightgray;
   text-decoration: none;
-  color: black;
   font-family: 'Raleway', sans-serif;
-  background-color: aliceblue;
+  padding-left: 11px;
+  padding-right: 11px;
+  color: black;
+  background-color: white;
+}
+
+.add-client-btn:hover,
+.edit-client-btn:hover, 
+.new-style-btn:hover, 
+.edit-style-btn:hover,
+.back:hover,
+.submit-btn:hover,
+.send-shipping-notification-btn:hover {
+  box-shadow: 2px 2px 2px lightgray;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+  color: red;
 }

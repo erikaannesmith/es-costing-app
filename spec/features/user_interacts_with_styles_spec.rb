@@ -62,7 +62,7 @@ describe "User interacts with styles" do
                            client: client_1)
     
     visit root_path
-    click_on client_1.name
+    click_on client_1.name.upcase
     click_on style_1.name
 
     expect(current_path).to eq(user_client_style_path(client_1, style_1))
@@ -84,7 +84,7 @@ describe "User interacts with styles" do
     expect(client_1.styles.count).to eq(0)
 
     visit root_path
-    click_on client_1.name
+    click_on client_1.name.upcase
     click_on "+"
 
     expect(current_path).to eq(new_user_client_style_path(client_1))
