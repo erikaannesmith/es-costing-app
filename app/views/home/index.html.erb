@@ -1,7 +1,7 @@
 
 <% if current_user  %>
   <div class="welcome-scrn">
-    <h2 class="welcome">Welcome, <%= "#{current_user.first_name}!" %></h2>
+    <h2 class="welcome">Welcome, <%= "#{current_user.company}!" %></h2>
     <div class="clients-top-line">
       <h3 class='titles'>CLIENTS</h3>
       <%= link_to '+', new_user_client_path, class: 'add-client-btn'%>

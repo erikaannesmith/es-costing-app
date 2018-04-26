@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
+  resources :users
   namespace :user do
     resources :clients do
       get '/search', to: "style_search#index"

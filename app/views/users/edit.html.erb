@@ -1,0 +1,11 @@
+<div class="company-name-form">
+  <h1>Last Step!</h1>
+  <p>Provide us with your company name, which will be used when sending shipping notification emails to your clients.</p>
+  <%= form_for @user do |f| %>
+    <div class="edit-co-form">
+      <%= f.text_field :company, placeholder: "Company Name" %>
+
+      <%= f.submit "GET STARTED", class:'get-started-btn' %>
+    </div>
+  <% end %>
+</div>

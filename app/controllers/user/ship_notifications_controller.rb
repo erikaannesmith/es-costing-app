@@ -17,11 +17,12 @@ class User::ShipNotificationsController < ApplicationController
       @shipping_reciept = ""
       @shipping_receipt_name = ""
     end
-    send_shipping_notification(@recipient, @tracking_number, @shipping_service, @additional_notes, @sender_email, @sender_name, @shipping_reciept, @shipping_receipt_name)
+    @sender_company = current_user.company
+    send_shipping_notification(@recipient, @tracking_number, @shipping_service, @additional_notes, @sender_email, @sender_name, @shipping_reciept, @shipping_receipt_name, @sender_company)
   end
 
-  def send_shipping_notification(recipient, tracking_number, shipping_service, additional_notes, sender_email, sender_name, shipping_reciept, shipping_receipt_name)
-    UserMailer.welcome_email(recipient, tracking_number, shipping_service, additional_notes, sender_email, sender_name, shipping_reciept, shipping_receipt_name).deliver    
+  def send_shipping_notification(recipient, tracking_number, shipping_service, additional_notes, sender_email, sender_name, shipping_reciept, shipping_receipt_name, sender_company)
+    UserMailer.welcome_email(recipient, tracking_number, shipping_service, additional_notes, sender_email, sender_name, shipping_reciept, shipping_receipt_name, sender_company).deliver    
     redirect_to user_ship_notifications_path(current_user)
     flash[:success] = "Shipping notification has been sent!"
   end

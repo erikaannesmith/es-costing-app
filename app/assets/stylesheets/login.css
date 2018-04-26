@@ -78,7 +78,8 @@ h2 {
 .edit-style-btn,
 .back,
 .submit-btn,
-.send-shipping-notification-btn {
+.send-shipping-notification-btn,
+.get-started-btn {
   margin: 10px;
   padding: 7px;
   border-radius: 4px;
@@ -97,7 +98,8 @@ h2 {
 .edit-style-btn:hover,
 .back:hover,
 .submit-btn:hover,
-.send-shipping-notification-btn:hover {
+.send-shipping-notification-btn:hover,
+.get-started-btn:hover {
   box-shadow: 2px 2px 2px lightgray;
   -o-transition:.3s;
   -ms-transition:.3s;

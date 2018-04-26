@@ -42,7 +42,7 @@
   align-items: center;
 }
 
-h3 {
+h3, p {
   font-family: 'Raleway', sans-serif;
   font-weight: normal;
 }
