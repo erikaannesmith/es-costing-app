@@ -22,7 +22,7 @@ textarea:focus, input:focus, button:focus{
     outline: none;
 }
 
-#file {
+#file, #file_two {
   padding-left: 85px;
 }
 
